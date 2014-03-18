@@ -1,6 +1,8 @@
 # Emacs for Clojure Starter Kit
 
+*clone it into the users/username/appdata directory or google for where is ~/emacs. in windows or so
 This repo is a minor extension of [The Emacs Starter Kit, v2](https://github.com/technomancy/emacs-starter-kit/tree/v2). Added functionality:
+
 
 * Sets $PATH so that it's the same as your shell $PATH
 * Includes the tomorrow-night and zenburn themes
