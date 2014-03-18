@@ -9,3 +9,4 @@
   (package-refresh-contents))
 
 (load "~/.emacs.d/user.el")
+(w32-send-sys-command 61488)
