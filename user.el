@@ -48,5 +48,13 @@
 
 (setq ido-use-filename-at-point nil)
 
+(add-to-list 'load-path "~/.emacs.d/vendor/4clj-el/")
+(require 'four-clj)
+
 ;; Save here instead of littering current directory with emacs backup files
 (setq backup-directory-alist `(("." . "~/.saves")))
+
+(setq tab-width 2)
+(setq coffee-tab-width 2)
+;; automatically clean up bad whitespace
+(setq whitespace-action '(auto-cleanup))
