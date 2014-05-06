@@ -4,7 +4,7 @@
 
 
 ;;;### (autoloads nil "starter-kit-bindings" "starter-kit-bindings.el"
-;;;;;;  (20184 56041))
+;;;;;;  (21352 58578 0 0))
 ;;; Generated autoloads from starter-kit-bindings.el
 
 (global-set-key (kbd "C-c f") 'find-file-in-project)
@@ -65,8 +65,8 @@
 
 ;;;***
 
-;;;### (autoloads nil nil ("starter-kit-bindings-pkg.el") (20184
-;;;;;;  56041 900829))
+;;;### (autoloads nil nil ("starter-kit-bindings-pkg.el") (21352
+;;;;;;  58578 826000 0))
 
 ;;;***
 

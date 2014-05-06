@@ -24,7 +24,7 @@
 ;; 
 ;; Adding this code will make Emacs enter yaml mode whenever you open
 ;; a .yml file
-(add-to-list 'load-path "~/.emacs.d/vendor")
+;;(add-to-list 'load-path "~/.emacs.d/vendor")
 
 ;; shell scripts
 (setq-default sh-basic-offset 2)
@@ -40,7 +40,7 @@
 ;; Flyspell often slows down editing so it's turned off
 (remove-hook 'text-mode-hook 'turn-on-flyspell)
 
-(load "~/.emacs.d/vendor/clojure")
+;;(load "~/.emacs.d/vendor/clojure")
 
 ;; hippie expand - don't try to complete with file names
 (setq hippie-expand-try-functions-list (delete 'try-complete-file-name hippie-expand-try-functions-list))
@@ -48,8 +48,8 @@
 
 (setq ido-use-filename-at-point nil)
 
-(add-to-list 'load-path "~/.emacs.d/vendor/4clj-el/")
-(require 'four-clj)
+;;(add-to-list 'load-path "~/.emacs.d/vendor/4clj-el/")
+;;(require 'four-clj)
 
 ;; Save here instead of littering current directory with emacs backup files
 (setq backup-directory-alist `(("." . "~/.saves")))
@@ -58,3 +58,25 @@
 (setq coffee-tab-width 2)
 ;; automatically clean up bad whitespace
 (setq whitespace-action '(auto-cleanup))
+
+
+;;ac-nrepl provides an nrepl-specific completion source, so auto-complete needs to be told to use them when cider-repl-mode is active. To do this, put the following code in your emacs init file to
+
+(require 'ac-nrepl)
+(add-hook 'cider-repl-mode-hook 'ac-nrepl-setup)
+(add-hook 'cider-mode-hook 'ac-nrepl-setup)
+(eval-after-load "auto-complete"
+  '(add-to-list 'ac-modes 'cider-repl-mode))
+
+;;If you want to trigger auto-complete using TAB in nrepl buffers, you may want to put auto-complete into your completion-at-point-functions:
+
+(defun set-auto-complete-as-completion-at-point-function ()
+  (setq completion-at-point-functions '(auto-complete)))
+(add-hook 'auto-complete-mode-hook 'set-auto-complete-as-completion-at-point-function)
+
+(add-hook 'cider-repl-mode-hook 'set-auto-complete-as-completion-at-point-function)
+(add-hook 'cider-mode-hook 'set-auto-complete-as-completion-at-point-function)
+
+;You might consider using ac-nrepl's popup documentation in place of nrepl-doc:
+(eval-after-load "cider"
+  '(define-key cider-mode-map (kbd "C-c C-d") 'ac-nrepl-popup-doc))
