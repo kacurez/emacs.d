@@ -80,3 +80,4 @@
 ;You might consider using ac-nrepl's popup documentation in place of nrepl-doc:
 (eval-after-load "cider"
   '(define-key cider-mode-map (kbd "C-c C-d") 'ac-nrepl-popup-doc))
+(add-hook 'clojure-mode-hook 'turn-on-eldoc-mode)
