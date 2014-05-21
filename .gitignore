@@ -5,4 +5,5 @@ places
 url/*
 swank/*
 .smex-items
+tramp
 
