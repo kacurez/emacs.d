@@ -3,6 +3,15 @@
 ;; Lightweight clojure setup for Emacs
 ;; requires emacs24 and leiningen
 
+;; Load CEDET.
+;; See cedet/common/cedet.info for configuration details.
+;; IMPORTANT: For Emacs >= 23.2, you must place this *before* any
+;; CEDET component (including EIEIO) gets activated by another 
+;; package (Gnus, auth-source, ...).
+;;(load-file "~/emacs.d/cedet/common/cedet.el")
+
+;; Enable EDE (Project Management) features
+(global-ede-mode 1) 
 
 ;; Add Marmalade package archive for Emacs starter kit and other Emacs packages
 
@@ -12,6 +21,7 @@
              '("melpa" . "http://melpa-stable.milkbox.net/packages/") 
              )
 (package-initialize)
+
 
 
 ;; Add Clojure and other supporting packages to the Emacs environment
@@ -83,3 +93,5 @@
 (require 'tramp)
 (setq tramp-auto-save-directory "c:\\tmp")
 (setq tramp-default-method "plink")
+
+(require 'sr-speedbar)
