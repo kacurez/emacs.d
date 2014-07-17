@@ -1,3 +1,6 @@
+;;turn off creation of backup files ending with ~
+(setq make-backup-files nil) 
+
 ;;IDO  SETUP
 (require 'flx-ido)
 (ido-mode 1)
@@ -15,4 +18,9 @@
 (ido-mode 1)
 (ido-vertical-mode 1)
 
+
+;; KEY GUIDE
+(require 'guide-key)
+(setq guide-key/guide-key-sequence '("C-x r" "C-x 4"))
+(guide-key-mode 1)  ; Enable guide-key-mode
 

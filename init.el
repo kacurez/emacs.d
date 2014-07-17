@@ -2,7 +2,7 @@
 (if (fboundp 'menu-bar-mode) (menu-bar-mode -1))
 (if (fboundp 'tool-bar-mode) (tool-bar-mode -1))
 ;;(if (fboundp 'scroll-bar-mode) (scroll-bar-mode -1))
-
+ 
 ;; No splash screen
 (setq inhibit-startup-message t)
 
@@ -24,6 +24,7 @@
    '(
      ;; emacs utils
      guide-key ;;list avalable shortcuts
+     key-chord
      flx-ido ido-vertical-mode ido-at-point ido-ubiquitous
      smex ;;command completition
      dired+
@@ -37,6 +38,8 @@
      visual-regexp
      highlight-escape-sequences
      whitespace-cleanup-mode
+     volatile-highlights ;;vizualize paste opreation
+     undo-tree
  
      ;; programming utils
      rebox2;; make commentary boxes
@@ -70,6 +73,8 @@
 
 
 (load "setup-emacs-utils")
+(load "setup-editing-utils")
+(load "setup-project-mgmt-utils")
 
 
 ;; Keep emacs Custom-settings in separate file
