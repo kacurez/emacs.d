@@ -1,2 +1,6 @@
 elpa
 projectile*
+.projectile*
+ac-comphist.dat
+auto-save-list
+eshell
