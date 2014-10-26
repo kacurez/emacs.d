@@ -1,5 +1,5 @@
 ;;set fullscreen
-(w32-send-sys-command 61488)
+;;(w32-send-sys-command 61488)
 
 (load-theme 'ample-zen t)
 

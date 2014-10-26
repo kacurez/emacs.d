@@ -10,4 +10,4 @@
 
 
 
-(global-nlinum-mode)
+;;(global-nlinum-mode)

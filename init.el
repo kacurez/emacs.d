@@ -6,9 +6,9 @@
 (if (fboundp 'tool-bar-mode) (tool-bar-mode -1))
 (if (fboundp 'scroll-bar-mode) (scroll-bar-mode -1))
 
-
+(add-to-list 'load-path (expand-file-name "~/.emacs.d/lisp"))
 ;; Set up load path should be emacs.d
-(add-to-list 'load-path user-emacs-directory)
+(add-to-list 'load-path "~/.emacs.d/" t)
 
 ;;prepare helper functions to install packages
 (load "prepare-packaging")
@@ -78,7 +78,7 @@
      clojure-mode
      cider
      ;;cider-tracing
-     ac-cider-compliment
+     ;;ac-cider-compliment
 )))
 
 (condition-case nil
