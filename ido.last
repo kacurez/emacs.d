@@ -1,0 +1,53 @@
+;;; -*- coding: utf-8 -*-
+
+;; ----- ido-last-directory-list -----
+(
+ ("/Users/tomaskacur/Documents/Native Instruments/Maschine/" . "Groups/")
+ ("/Users/tomaskacur/Documents/Native Instruments/" . "Maschine/")
+ ("/Users/tomaskacur/Documents/" . "Native Instruments/")
+ ("/Users/tomaskacur/.emacs.d/" . "lisp/")
+ ("/Users/tomaskacur/Downloads/" . "emacs.d-master/")
+ ("/Users/tomaskacur/" . "Applications/")
+)
+
+;; ----- ido-work-directory-list -----
+(
+ "/Users/tomaskacur/Documents/Native Instruments/Maschine/Groups/"
+ "/Users/tomaskacur/.emacs.d/"
+ "/Users/tomaskacur/.emacs.d/lisp/"
+ "/Users/tomaskacur/Downloads/emacs.d-master/"
+)
+
+;; ----- ido-work-file-list -----
+(
+ "init.el"
+ "setup-devel-utils.el"
+)
+
+;; ----- ido-dir-file-cache -----
+(
+ ("/Users/tomaskacur/Documents/Native Instruments/Maschine/Groups/" (21586 57532 0 0) "../" "./")
+
+ ("/Users/tomaskacur/Documents/Native Instruments/Maschine/" (21586 57532 0 0) "Sounds/" "Samples/" "Recordings/" "Projects/" "Patterns/" "Modules/" "Groups/" "../" "./")
+
+ ("/Users/tomaskacur/Documents/Native Instruments/" (21586 57532 0 0) "Maschine/" "../" "./")
+
+ ("/Users/tomaskacur/Documents/" (21586 57532 0 0) "Native Instruments/" ".localized" "../" "./")
+
+ ("/Users/tomaskacur/" (21590 8694 0 0) "Public/" "Pictures/" "OLD/" "MyMusic/" "Music/" "Movies/" "Library/" "Downloads/" "Documents/" "Desktop/" "Applications/" ".viminfo" ".Trash/" ".ssh/" ".smex-items" ".local/" ".gitconfig" ".emacs.d/" ".DS_Store" ".config/" ".CFUserTextEncoding" ".cache/" ".bash_history" "../" "./")
+
+ ("/Users/tomaskacur/.emacs.d/" (21588 57690 0 0) "projectile.cache" "projectile-bookmarks.eld" "lisp/" "init.el" "ido.last" "elpa/" "auto-save-list/" "ac-comphist.dat" ".gitmodules" ".gitignore" ".git/" ".#init.el" "#init.el#" "../" "./")
+
+ ("/Users/tomaskacur/.emacs.d/lisp/" (21588 57741 0 0) "special-copying.el" "setup-web-devel-utils.el" "setup-project-mgmt-utils.el" "setup-emacs-utils.el" "setup-editing-utils.el" "setup-devel-utils.el" "setup-clojure.el" "setup-appearance-utils.el" "prepare-packaging.el" "init.el" ".gitignore" ".git/" "../" "./")
+
+ ("/Users/tomaskacur/.ssh/" (21581 14811 0 0) "otherkeys/" "known_hosts" "id_rsaopenssh" "id_rsa.txt" "id_rsa.pub" "id_rsa.ppk" "../" "./")
+
+ ("/Users/tomaskacur/Downloads/emacs.d-master/" (21588 57508 0 0) "setup-project-mgmt-utils.el" "setup-emacs-utils.el" "setup-editing-utils.el" "prepare-packaging.el" "init.el" ".gitignore" ".#init.el" "../" "./")
+
+ ("/Users/tomaskacur/Downloads/" (21588 52123 0 0) "XtraFinder.dmg" "XQuartz-2.7.4.dmg" "Wineskin Winery.app Version 1.7.zip" "Wineskin Winery.app/" "waste/" "uTorrent.dmg" "SpotifyInstaller.zip" "Skype_7.0.653.dmg" "MonoFramework-MRE-3.2.3.macos10.xamarin.x86.pkg" "Midnight Commander 4.8.12 installer.mpkg/" "Midnight Commander 4.8.12 installer 2.mpkg/" "mc-4.8.12-bin-osx-universal.zip" "keys/" "KeePass2.23.zip" "KeePass-2.28.zip" "KeePass-2.28/" "Install Spotify.app/" "googlechrome.dmg" "emacs.d-master.zip" "emacs.d-master/" "Emacs-24.4-universal.dmg" "About Downloads.lpdf/" ".localized" ".DS_Store" "../" "./")
+
+ ("/Users/tomaskacur/Applications/" (21582 39862 0 0) "Wineskin/" "Chrome Apps.localized/" ".localized" ".DS_Store" "../" "./")
+)
+
+;; ----- ido-unc-hosts-cache -----
+t
