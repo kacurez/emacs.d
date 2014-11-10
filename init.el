@@ -6,99 +6,81 @@
 (if (fboundp 'tool-bar-mode) (tool-bar-mode -1))
 (if (fboundp 'scroll-bar-mode) (scroll-bar-mode -1))
 
-(add-to-list 'load-path "~/.emacs.d/lisp")
-;; Set up load path should be emacs.d
-;;(add-to-list 'load-path "~/.emacs.d/" t)
+(defconst *spell-check-support-enabled* nil) ;; Enable with t if you prefer
+(defconst *is-a-mac* (eq system-type 'darwin))
 
-;;prepare helper functions to install packages
-(load "prepare-packaging")
+;;----------------------------------------------------------------------------
+;; Bootstrap config
+;;----------------------------------------------------------------------------
+(require 'init-utils)
+;;(require 'init-site-lisp) ;; Must come before elpa, as it may provide package.el
+(require 'init-elpa)      ;; Machinery for installing required packages
+(require 'init-exec-path) ;; Set up $PATH
 
-;; Add melpa to package repos
-(add-to-list 'package-archives '("melpa" . "http://melpa.milkbox.net/packages/") t)
+;;----------------------------------------------------------------------------
+;; Load configs for specific features and modes
+;;----------------------------------------------------------------------------
+(require-package 'wgrep)
+(require-package 'diminish)
 
+(require 'init-key-chord)
+(require 'init-ido)
+(require 'init-ace-jump)
+(require 'init-guide-key)
+(require 'init-hippie-expand)
+(require 'init-dired)
+(require 'init-dash)
+(require 'init-themes)
 
+(require 'init-volatile-highlights)
+(require 'init-undo-tree)
+(require 'init-rainbow-mode)
 
-;; Install extensions if they're missing adasd
-(defun init--install-packages ()
-  (packages-install
-   '(
-     ;; emacs utils: hippie expand etc
-     guide-key ;;list avalable shortcuts
-     key-chord
-     flx-ido ido-vertical-mode ido-at-point ido-ubiquitous
-     smex ;;command completition
-     ace-jump-mode
-     dired+
-     dash
-
-     ;;appearance-utils
-     ample-zen-theme
-
-     ;;network utils
-     restclient
-     tramp
-
-     ;; editing utils
-     visual-regexp
-     highlight-escape-sequences
-     whitespace-cleanup-mode
-     volatile-highlights ;;vizualize paste opreation
-     undo-tree
-     rainbow-mode
-
-     ;; developement utils
-     rebox2;; make commentary boxes
-     flycheck;; check syntax errors
-     yasnippet;; code snippets and templates
-     auto-complete
-     paredit;; parrenthezis
-     smartparens
-     ggtags
-     rainbow-delimiters
-     company
-
-     php-mode
-     ;;web devel utils
-     coffee-mode
-
-     ;;project mgmt utils
-     helm
-     helm-projectile
-     projectile
-     workgroups2
-     ecb
-
-     ;;GIT utils
-     ;;gist
-     magit
-     git-commit-mode gitconfig-mode gitignore-mode
-
-     ;;prodigy services maintanence
-     ;;CLOJURE STUFF
-     clojure-mode
-     cider
-     ;;cider-tracing
-     ;;ac-cider-compliment
-)))
-
-(condition-case nil
-    (init--install-packages)
-  (error
-   (package-refresh-contents)
-   (init--install-packages)))
+;;devel
+(require 'init-rebox2)
+(require 'init-autocomplete)
+(require 'init-paredit)
+(require 'init-rainbow-delimiters)
 
 
-(load "setup-appearance-utils")
-;;network utils
-(require `restclient)
-(load "setup-emacs-utils")
-(load "setup-editing-utils")
-(load "setup-devel-utils")
-(load "setup-project-mgmt-utils")
-(load "setup-web-devel-utils")
-(load "special-copying")
-(load "setup-clojure")
-;; Keep emacs Custom-settings in separate file
+(require 'init-coffee-mode)
+(require 'init-whitespace-cleanup)
+
+(require 'init-projectile)
+(require 'init-helm);;helm and projectile-helm
+
+(require 'init-git)
+
+(require 'init-clojure)
+
+(require 'init-editing)
+
+(require 'init-others)
+
+
+;,---------------------------------------------------------
+;| install packages that dont require special configuration
+;`---------------------------------------------------------
+
+(require-package 'tramp-term)
+(require-package 'restclient)
+
+(require-package 'visual-regexp)
+(require-package 'highlight-escape-sequences)
+
+
+(require-package 'flycheck)     ;; check syntax errors
+(require-package 'yasnippet)	;; code snippets and templates
+(require-package 'smartparens)
+(require-package 'ggtags)
+(require-package 'company)
+(require-package 'php-mode)
+
+
+;;CUSTOM.EL 
 (setq custom-file (expand-file-name "custom.el" user-emacs-directory))
 (if (file-exists-p custom-file)
 (load custom-file))
+
+;;OSX stuff
+(toggle-frame-maximized)

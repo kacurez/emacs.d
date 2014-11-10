@@ -1,19 +1,9 @@
-;; automatically clean up bad whitespace
-(setq whitespace-action '(auto-cleanup))
-;; only show bad whitespace
+;;turn off creation of backup files ending with ~
+(setq make-backup-files nil)
+(setq tramp-default-method "ssh")
+(global-set-key  (kbd "C--") 'text-scale-decrease)
+(global-set-key  (kbd "C-+") 'text-scale-increase)
 
-(setq whitespace-style '(trailing space-before-tab indentation empty space-after-tab))
-;;white space cleanup action
-;;(setq global-whitespace t)
-;;(setq global-whitespace-mode-cleanup-mode 1)
-;;(setq whitespace-mode t)
-(add-hook 'before-save-hook 'whitespace-cleanup)
-
-
-
-;;coffe mode setup
-;; This gives you a tab of 2 spaces
-(custom-set-variables '(coffee-tab-width 2))
 
 
 ;;auto align html stuff
@@ -36,3 +26,7 @@ Including indent-buffer, which should not be called automatically on save."
   (indent-buffer))
 
 (global-set-key (kbd "C-c n") 'cleanup-buffer)
+
+
+
+(provide 'init-others)
