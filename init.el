@@ -6,6 +6,8 @@
 (if (fboundp 'tool-bar-mode) (tool-bar-mode -1))
 (if (fboundp 'scroll-bar-mode) (scroll-bar-mode -1))
 
+(add-to-list 'load-path (expand-file-name "lisp" user-emacs-directory))
+
 (defconst *spell-check-support-enabled* nil) ;; Enable with t if you prefer
 (defconst *is-a-mac* (eq system-type 'darwin))
 
@@ -32,8 +34,10 @@
 (require 'init-dash)
 (require 'init-themes)
 
+
 (require 'init-volatile-highlights)
 (require 'init-undo-tree)
+
 (require 'init-rainbow-mode)
 
 ;;devel

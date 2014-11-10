@@ -3,7 +3,4 @@
 (provide 'init-rainbow-mode)
 
 
-()
-(after "rainbow-delimiters-autoloads"
-  ;;(global-rainbow-delimiters-mode)
- )
+

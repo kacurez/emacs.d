@@ -1,4 +1,4 @@
-(add-to-list 'load-path (expand-file-name "lisp" user-emacs-directory))
+
 
 ;;; Find and load the correct package.el
 

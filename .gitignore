@@ -5,5 +5,5 @@ ac-comphist.dat
 auto-save-list
 eshell
 .DS_STORE
-ido.last
+ido.last*
 tramp
