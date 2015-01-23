@@ -5,5 +5,6 @@
 			    (set (make-local-variable 'rebox-style-loop) '(25 17 21))
 			    (set (make-local-variable 'rebox-min-fill-column) 40)
 			    (rebox-mode 1)))
-
+(after-load 'rebox2
+  (diminish 'rebox-mode))
 (provide 'init-rebox2)

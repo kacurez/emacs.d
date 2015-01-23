@@ -1,5 +1,5 @@
 (require-package 'auto-complete)
 (require 'auto-complete-config)
 (ac-config-default)
-
+(add-hook 'prog-mode-hook 'auto-complete-mode )
 (provide 'init-autocomplete)

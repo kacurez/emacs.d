@@ -33,10 +33,11 @@
 (require 'init-dired)
 (require 'init-dash)
 (require 'init-themes)
-
+(require 'init-hightlight)
 
 (require 'init-volatile-highlights)
 (require 'init-undo-tree)
+(require 'init-multiple-cursors)
 
 (require 'init-rainbow-mode)
 
@@ -45,10 +46,12 @@
 (require 'init-autocomplete)
 (require 'init-paredit)
 (require 'init-rainbow-delimiters)
+(require 'init-flycheck)     ;; check syntax errors
 
-
+(require 'init-html)
 (require 'init-coffee-mode)
-(require 'init-whitespace-cleanup)
+(require 'init-js-stack)
+(require 'init-whitespace-cleanup-mode)
 
 (require 'init-projectile)
 (require 'init-helm);;helm and projectile-helm
@@ -73,18 +76,26 @@
 (require-package 'highlight-escape-sequences)
 
 
-(require-package 'flycheck)     ;; check syntax errors
+
 (require-package 'yasnippet)	;; code snippets and templates
 (require-package 'smartparens)
 (require-package 'ggtags)
 (require-package 'company)
 (require-package 'php-mode)
 
+;;----------------------------------------------------------------------------
+;; Allow access from emacsclient
+;;----------------------------------------------------------------------------
+(require 'server)
+(unless (server-running-p)
+  (server-start))
 
-;;CUSTOM.EL 
+
+;;CUSTOM.EL
 (setq custom-file (expand-file-name "custom.el" user-emacs-directory))
 (if (file-exists-p custom-file)
 (load custom-file))
 
 ;;OSX stuff
 (toggle-frame-maximized)
+(put 'dired-find-alternate-file 'disabled nil)

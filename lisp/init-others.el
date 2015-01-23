@@ -1,10 +1,18 @@
 ;;turn off creation of backup files ending with ~
 (setq make-backup-files nil)
+;; disable auto-save
+;;(setq auto-save-default nil)
+
+;; store all backup and autosave files in the tmp dir
+(setq backup-directory-alist
+      `((".*" . ,temporary-file-directory)))
+(setq auto-save-file-name-transforms
+      `((".*" ,temporary-file-directory t)))
+
+
 (setq tramp-default-method "ssh")
 (global-set-key  (kbd "C--") 'text-scale-decrease)
 (global-set-key  (kbd "C-+") 'text-scale-increase)
-
-
 
 ;;auto align html stuff
 (defun untabify-buffer ()
@@ -27,6 +35,8 @@ Including indent-buffer, which should not be called automatically on save."
 
 (global-set-key (kbd "C-c n") 'cleanup-buffer)
 
+(show-paren-mode 1)
 
+(defalias 'yes-or-no-p 'y-or-n-p)
 
 (provide 'init-others)
