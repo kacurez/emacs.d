@@ -15,5 +15,6 @@
 
 (eval-after-load "auto-complete"
   '(add-to-list 'ac-modes 'cider-mode))
+(setenv "LEIN_JVM_OPTS" "-Xmx256m -Xms64m")
 
 (provide 'init-clojure)

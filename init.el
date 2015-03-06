@@ -24,10 +24,11 @@
 ;;----------------------------------------------------------------------------
 (require-package 'wgrep)
 (require-package 'diminish)
+(require-package 'smooth-scrolling)
 
 (require 'init-key-chord)
 (require 'init-ido)
-(require 'init-ace-jump)
+(require 'init-ace-jump) ;and ace-window
 (require 'init-guide-key)
 (require 'init-hippie-expand)
 (require 'init-dired)
@@ -54,7 +55,7 @@
 (require 'init-whitespace-cleanup-mode)
 
 (require 'init-projectile)
-(require 'init-helm);;helm and projectile-helm
+(require 'init-helm);;helm and projectile-helm and helm-git-grep
 
 (require 'init-git)
 
@@ -98,4 +99,4 @@
 
 ;;OSX stuff
 (toggle-frame-maximized)
-(put 'dired-find-alternate-file 'disabled nil)
+;;(put 'dired-find-alternate-file 'disabled nil)

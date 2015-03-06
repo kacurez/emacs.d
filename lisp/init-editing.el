@@ -78,11 +78,20 @@
      When used in shell-mode, it will paste string on shell prompt by default "
        (interactive "P")
        (copy-thing 'beginning-of-string 'end-of-string arg)
-       (paste-to-mark arg)
+       ;(paste-to-mark arg)
        )
+
+(defun copy-quoted-string ()
+  (interactive)
+  "Copies the quoted text, ignoring the escaped quotes"
+  (save-excursion
+     (search-backward-regexp "[^\\][\"']")
+     (forward-char)
+     (mark-sexp)
+     (kill-ring-save (point) (mark))))
+
 ;;Key binding
 ;;not working
-;;(global-set-key (kbd "C-c s")         (quote
-;thing-copy-string-to-mark))
+(global-set-key (kbd "C-c s") (quote copy-quoted-string))
 
 (provide 'init-editing)

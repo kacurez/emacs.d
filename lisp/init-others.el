@@ -39,4 +39,7 @@ Including indent-buffer, which should not be called automatically on save."
 
 (defalias 'yes-or-no-p 'y-or-n-p)
 
+;;scrolling setup
+(setq smooth-scroll-margin 8)
+
 (provide 'init-others)
