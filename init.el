@@ -64,7 +64,7 @@
 (require 'init-editing)
 
 (require 'init-others)
-
+(require 'init-bookmarks-plus)
 
 ;,---------------------------------------------------------
 ;| install packages that dont require special configuration

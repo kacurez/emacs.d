@@ -1,6 +1,7 @@
 (require 'dired)
-(require-package 'dired+)
 (require-package 'dired-details+)
+(require-package 'dired+)
+(require 'dired+)
 
 ;; This is different than dired-up-directory in that it stays in the current buffer, instead of loading the parent directory in a new buffer. (I used to care about unused buffers.)
 (add-hook 'dired-mode-hook
@@ -25,7 +26,10 @@
 	 (re-search-backward "\\(^[ 0-9.,]+[A-Za-z]+\\).*total$")
 	 (match-string 1))))))
 
+;;(define-key ctl-x-map   "d" 'diredp-dired-this-subdir)
+;;(define-key ctl-x-4-map "d" 'dired-other-window)
 (define-key dired-mode-map (kbd "z") 'dired-get-size)
+
 ;;(setq dired-listing-switches "-lXGh --group-directories-first")
 ;;(setq dired-listing-switches "-aBhl  --group-directories-first")
 ;; (defun mydired-sort ()
