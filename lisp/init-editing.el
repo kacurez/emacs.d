@@ -42,7 +42,8 @@
 ;;COPY WORD
 (defun copy-word (&optional arg)
       "Copy words at point into kill-ring"
-       (interactive "P")
+      (interactive "P")
+      (forward-word)
        (copy-thing 'backward-word 'forward-word arg)
        ;;(paste-to-mark arg)
      )
