@@ -4,8 +4,14 @@
 (set-language-environment "UTF-8")
 
 ;; No splash screen
-(setq inhibit-startup-message t)
+;;(setq inhibit-startup-message t)
 (setq inhibit-startup-echo-area-message "tomaskacur")
+(setq fancy-about-text nil)
+(defun fancy-startup-tail (&optional concise)
+ (fancy-splash-insert )
+ )
+(setq fancy-startup-text nil)
+(setq fancy-splash-image (expand-file-name "geko.jpg" user-emacs-directory))
 
 (defun display-startup-echo-area-message ()
   (message (concat "Loaded in " (emacs-init-time))))
