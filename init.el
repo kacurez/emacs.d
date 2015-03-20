@@ -51,8 +51,6 @@
 (require 'init-undo-tree)
 (require 'init-multiple-cursors)
 
-(require 'init-rainbow-mode)
-
 ;;devel
 (require 'init-rebox2)
 (require 'init-autocomplete)
@@ -82,7 +80,7 @@
 					;`---------------------------------------------------------
 
 (require-package 'tramp-term)
-(require-package 'restclient)
+;;(require-package 'restclient) melpa problem installing?
 
 (require-package 'visual-regexp)
 (require-package 'highlight-escape-sequences)

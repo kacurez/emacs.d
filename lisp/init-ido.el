@@ -10,7 +10,7 @@
 
 
 
-(require 'smex) ; Not needed if you use package.el
+(require-package 'smex) ; Not needed if you use package.el
 (smex-initialize)
 (global-set-key (kbd "M-x") 'smex)
 (global-set-key (kbd "M-X") 'smex-major-mode-commands)
