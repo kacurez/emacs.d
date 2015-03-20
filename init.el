@@ -1,5 +1,5 @@
-(let ((benchmark-init.el (expand-file-name "elpa/benchmark-init-20141004.609/benchmark-init.el"  user-emacs-directory) ))
-  (load benchmark-init.el))
+;; (let ((benchmark-init.el (expand-file-name "elpa/benchmark-init-20141004.609/benchmark-init.el"  user-emacs-directory) ))
+;;   (load benchmark-init.el))
 
 (set-language-environment "UTF-8")
 
