@@ -3,7 +3,7 @@
       "Copy lines (as many as prefix argument) in the kill ring"
       (interactive "p")
       (kill-ring-save (line-beginning-position)
-		      (line-beginning-position (+ 1 arg)))
+                      (line-beginning-position (+ 1 arg)))
       (message "%d line%s copied" arg (if (= 1 arg) "" "s")))
  ;; optional key binding
    (global-set-key "\C-c\C-l" 'copy-line-with-return)
@@ -18,25 +18,25 @@
 
      (defun copy-thing (begin-of-thing end-of-thing &optional arg)
        "copy thing between beg & end into kill ring"
-	(save-excursion
-	  (let ((beg (get-point begin-of-thing 1))
-		 (end (get-point end-of-thing arg)))
-	    (copy-region-as-kill beg end)))
+        (save-excursion
+          (let ((beg (get-point begin-of-thing 1))
+                 (end (get-point end-of-thing arg)))
+            (copy-region-as-kill beg end)))
      )
 
      (defun paste-to-mark(&optional arg)
        "Paste things to mark, or to the prompt in shell-mode"
        (let ((pasteMe
-	 (lambda()
-	   (if (string= "shell-mode" major-mode)
-	     (progn (comint-next-prompt 25535) (yank))
-	   (progn (goto-char (mark)) (yank) )))))
-	(if arg
-	    (if (= arg 1)
-		nil
-	      (funcall pasteMe))
-	  (funcall pasteMe))
-	))
+         (lambda()
+           (if (string= "shell-mode" major-mode)
+             (progn (comint-next-prompt 25535) (yank))
+           (progn (goto-char (mark)) (yank) )))))
+        (if arg
+            (if (= arg 1)
+                nil
+              (funcall pasteMe))
+          (funcall pasteMe))
+        ))
 
 
 ;;COPY WORD
@@ -66,12 +66,12 @@
 (defun beginning-of-string(&optional arg)
        "  "
        (re-search-backward "[ \t]" (line-beginning-position) 3 1)
-	     (if (looking-at "[\t ]")  (goto-char (+ (point) 1)) )
+             (if (looking-at "[\t ]")  (goto-char (+ (point) 1)) )
      )
      (defun end-of-string(&optional arg)
        " "
        (re-search-forward "[ \t]" (line-end-position) 3 arg)
-	     (if (looking-back "[\t ]") (goto-char (- (point) 1)) )
+             (if (looking-back "[\t ]") (goto-char (- (point) 1)) )
      )
 
      (defun thing-copy-string-to-mark(&optional arg)
@@ -92,7 +92,32 @@
      (kill-ring-save (point) (mark))))
 
 ;;Key binding
-;;not working
 (global-set-key (kbd "C-c s") (quote copy-quoted-string))
+
+;;duplicate the current line
+(defun duplicate-line()
+  (interactive)
+  (move-beginning-of-line 1)
+  (kill-line)
+  (yank)
+  (open-line 1)
+  (next-line 1)
+  (yank)
+)
+(global-set-key (kbd "C-c d") (quote duplicate-line))
+
+;inserts new line from the beggining and yanks(paste text)
+(defun line-break-and-yank()
+  (interactive)
+  (move-beginning-of-line 1)
+  (open-line 1)
+  (yank)
+  )
+;key binding
+(global-set-key (kbd "C-c y") (quote line-break-and-yank))
+
+(setq standard-indent 2)
+;(setq python-indent 4)
+(setq-default indent-tabs-mode nil)
 
 (provide 'init-editing)

@@ -59,7 +59,10 @@
 
 ;;devel
 (require 'init-rebox2)
-(require 'init-autocomplete)
+;;(require 'init-autocomplete) REMOVED due to company mode
+
+(require 'init-company-mode)
+
 (require 'init-paredit)
 (require 'init-rainbow-delimiters)
 (require 'init-flycheck)     ;; check syntax errors
@@ -81,9 +84,10 @@
 (require 'init-others)
 (require 'init-bookmarks-plus)
 (require 'init-themes)
-					;,---------------------------------------------------------
-					;| install packages that dont require special configuration
-					;`---------------------------------------------------------
+
+;,---------------------------------------------------------
+;| install packages that dont require special configuration
+;`---------------------------------------------------------
 
 (require-package 'tramp-term)
 ;;(require-package 'restclient) melpa problem installing?
@@ -96,7 +100,7 @@
 (require-package 'yasnippet)    ;; code snippets and templates
 (require-package 'smartparens)
 (require-package 'ggtags)
-(require-package 'company)
+
 (require-package 'php-mode)
 
 ;;----------------------------------------------------------------------------
