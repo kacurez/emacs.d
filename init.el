@@ -45,6 +45,7 @@
 
 (require 'init-key-chord)
 (require 'init-ido)
+(require 'init-swiper)
 (require 'init-ace-jump) ;and ace-window
 (require 'init-guide-key)
 (require 'init-hippie-expand)
@@ -83,6 +84,9 @@
 
 (require 'init-others)
 (require 'init-bookmarks-plus)
+
+
+
 (require 'init-themes)
 
 ;,---------------------------------------------------------
@@ -91,6 +95,7 @@
 
 (require-package 'tramp-term)
 ;;(require-package 'restclient) melpa problem installing?
+
 
 (require-package 'visual-regexp)
 (require-package 'highlight-escape-sequences)
@@ -124,3 +129,4 @@
 ;;OSX stuff
 (toggle-frame-maximized)
 ;;(put 'dired-find-alternate-file 'disabled nil)
+;(load-theme 'ample-zen t)

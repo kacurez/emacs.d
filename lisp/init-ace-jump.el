@@ -3,11 +3,11 @@
 
 (setq aw-leading-char-style 'path)
 
-(key-chord-define-global "jj"  'avi-goto-char)
-(key-chord-define-global "jh"  'avi-goto-char-2)
-(key-chord-define-global "jl"  'avi-goto-line)
-(key-chord-define-global "jk"  'avi-goto-word-1)
-(key-chord-define-global "jw"  'avi-goto-word-0)
+(key-chord-define-global "jj"  'avy-goto-char)
+(key-chord-define-global "ji"  'avy-goto-char-2)
+(key-chord-define-global "jl"  'avy-goto-line)
+(key-chord-define-global "jk"  'avy-goto-word-1)
+(key-chord-define-global "jw"  'avy-goto-word-0)
 
 
 (global-set-key (kbd "M-o") 'ace-window)
