@@ -9,3 +9,6 @@ ido.last*
 tramp
 /bookmarks
 /.mc-lists.el
+/project-explorer-cache/
+/recentf
+/recentf~
