@@ -43,6 +43,8 @@
 (require-package 'diminish)
 (require-package 'smooth-scrolling)
 
+(require 'init-scrolling)
+
 (require 'init-key-chord)
 (require 'init-ido)
 (require 'init-swiper)
@@ -60,7 +62,6 @@
 
 ;;devel
 (require 'init-rebox2)
-;;(require 'init-autocomplete) REMOVED due to company mode
 
 (require 'init-company-mode)
 
@@ -83,7 +84,8 @@
 (require 'init-editing)
 
 (require 'init-others)
-(require 'init-bookmarks-plus)
+(require 'init-bookmarks)
+(require 'init-spotlight) ;only for OSX
 
 
 
@@ -107,6 +109,7 @@
 (require-package 'ggtags)
 
 (require-package 'php-mode)
+(require-package 'draft-mode)
 
 ;;----------------------------------------------------------------------------
 ;; Allow access from emacsclient
