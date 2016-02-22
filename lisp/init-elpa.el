@@ -1,5 +1,3 @@
-
-
 ;;; Find and load the correct package.el
 
 ;; When switching between Emacs 23 and 24, we always use the bundled package.el in Emacs 24
@@ -78,8 +76,6 @@ locate PACKAGE."
 
 
 
-(require-package 'fullframe)
-(fullframe list-packages quit-window)
 
 
 (require-package 'cl-lib)
@@ -100,5 +96,7 @@ locate PACKAGE."
 
 (add-hook 'package-menu-mode-hook 'tomasko/maybe-widen-package-menu-columns)
 
+(require-package 'fullframe)
+(fullframe list-packages quit-window)
 
 (provide 'init-elpa)

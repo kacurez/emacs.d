@@ -86,7 +86,7 @@
 (require 'init-others)
 (require 'init-bookmarks)
 (require 'init-spotlight) ;only for OSX
-
+(require 'init-markdown-mode)
 
 
 (require 'init-themes)
@@ -98,15 +98,13 @@
 (require-package 'tramp-term)
 ;;(require-package 'restclient) melpa problem installing?
 
-
 (require-package 'visual-regexp)
 (require-package 'highlight-escape-sequences)
-
-
 
 (require-package 'yasnippet)    ;; code snippets and templates
 (require-package 'smartparens)
 (require-package 'ggtags)
+(require-package 'general-close)
 
 (require-package 'php-mode)
 (require-package 'draft-mode)

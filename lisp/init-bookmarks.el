@@ -3,9 +3,9 @@
 
 ;; M$ Visual Studio key setup.
 
-(global-set-key (kbd "<C-f2>") 'bm-toggle)
-(global-set-key (kbd "<f2>")   'bm-next)
-(global-set-key (kbd "<S-f2>") 'bm-previous)
+(global-set-key (kbd "<M-return>") 'bm-toggle)
+(global-set-key (kbd "M-[")   'bm-next)
+(global-set-key (kbd "M-]") 'bm-previous)
 
 ;;Click on fringe to toggle bookmarks, and use mouse wheel to move between them.
 

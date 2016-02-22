@@ -13,6 +13,7 @@
                                  '(("jsx" . "\\.js[x]?\\'")))
                            (setq web-mode-enable-auto-quoting nil)
                            (setq web-mode-markup-indent-offset 2)
+                           (setq web-mode-attr-indent-offset 2)
                            (tern-mode t))
           ;; (add-to-list 'web-mode-indentation-params '("lineup-args" . nil))
           ;; (add-to-list 'web-mode-indentation-params '("lineup-calls" . nil))

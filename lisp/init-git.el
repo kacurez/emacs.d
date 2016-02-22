@@ -1,5 +1,5 @@
 (require-package 'magit)
-(require-package 'git-commit-mode)
+(require-package 'git-commit)
 (require-package 'gitconfig-mode )
 (require-package 'gitignore-mode)
 (require-package 'git-timemachine)
