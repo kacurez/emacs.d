@@ -1,10 +1,11 @@
-;(require-package 'helm)
+(require-package 'helm-core)
+(require-package 'helm)
 ;(require-package 'helm-projectile)
 ;(require-package 'helm-git)
-;(require-package 'helm-git-grep)
+(require-package 'helm-git-grep)
 ;(require-package 'helm-git-files)
 
-;;(global-set-key (kbd "C-c g") 'helm-git-grep)
+(global-set-key (kbd "C-c g") 'helm-git-grep)
 
 
 ;;HELM
