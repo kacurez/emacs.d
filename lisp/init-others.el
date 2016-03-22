@@ -42,4 +42,26 @@ Including indent-buffer, which should not be called automatically on save."
 ;;scrolling setup
 (setq smooth-scroll-margin 8)
 
+(defun ffap-read-file-or-url (prompt guess)
+  "Read file or URL from minibuffer, with PROMPT and initial GUESS."
+  (or guess (setq guess default-directory))
+  (let (dir)
+    ;; Tricky: guess may have or be a local directory, like "w3/w3.elc"
+    ;; or "w3/" or "../el/ffap.el" or "../../../"
+    (or (ffap-url-p guess)
+    (progn
+      (or (ffap-file-remote-p guess)
+          (setq guess
+            (abbreviate-file-name (expand-file-name guess))
+            ))
+      (setq dir (file-name-directory guess))))
+    ;; Do file substitution like (interactive "F"), suggested by MCOOK.
+    (or (ffap-url-p guess) (setq guess (substitute-in-file-name guess)))
+    ;; Should not do it on url's, where $ is a common (VMS?) character.
+    ;; Note: upcoming url.el package ought to handle this automatically.
+    guess))
+
+(global-set-key (kbd "<C-return>") 'ffap-other-window)
+(global-set-key (kbd "C-c <C-return>") 'ffap)
+
 (provide 'init-others)
