@@ -1,0 +1,6 @@
+(require-package 'json-mode)
+(require-package 'json-reformat)
+(require-package 'json-snatcher)
+(setq json-reformat:indent-width 2)
+(setq json-reformat:pretty-string? t)
+(provide 'init-json)

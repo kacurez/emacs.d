@@ -2,9 +2,11 @@
 (require-package 'web-mode)
 (require-package 'tern)
 (require-package 'jsx-mode)
+
 ;(require-package 'tern-auto-complete)
 
 (add-hook 'js-mode-hook (lambda () (tern-mode t)))
+; (add-hook 'js2-mode-hook #'jade-interaction-mode)
 (add-hook 'jsx-mode-hook (lambda () (tern-mode t)))
 (add-hook 'web-mode-hook (lambda ()
                            (define-key web-mode-map (kbd "C-c C-e") 'web-mode-element-close)

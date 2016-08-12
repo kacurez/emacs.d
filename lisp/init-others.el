@@ -64,4 +64,19 @@ Including indent-buffer, which should not be called automatically on save."
 (global-set-key (kbd "<C-return>") 'ffap-other-window)
 (global-set-key (kbd "C-c <C-return>") 'ffap)
 
+
+;; nearly all of this is the default layout ibuffer setup to wider
+;; name column
+(setq ibuffer-formats
+      '((mark modified read-only " "
+              (name 40 40 :left :elide) ; change: 30s were originally 18s
+              " "
+              (size 9 -1 :right)
+              " "
+              (mode 16 16 :left :elide)
+              " " filename-and-process)
+        (mark " "
+              (name 16 -1)
+              " " filename)))
+
 (provide 'init-others)

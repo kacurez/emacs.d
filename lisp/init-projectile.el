@@ -34,4 +34,12 @@
 (require-package 'project-explorer)
 (global-set-key (kbd "C-c o") 'project-explorer-open)
 
+(require-package 'ibuffer-projectile)
+(add-hook 'ibuffer-hook
+    (lambda ()
+      (ibuffer-projectile-set-filter-groups)
+      (unless (eq ibuffer-sorting-mode 'alphabetic)
+        (ibuffer-do-sort-by-alphabetic))))
+(global-set-key (kbd "C-x C-b") 'ibuffer)
+    (autoload 'ibuffer "ibuffer" "List buffers." t)
 (provide 'init-projectile)

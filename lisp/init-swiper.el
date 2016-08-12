@@ -31,6 +31,7 @@
  '(projectile-find-file . nil)
  )
 
-
+(add-to-list 'ivy-initial-inputs-alist
+             '(counsel-M-x . ""))
 
 (provide 'init-swiper)

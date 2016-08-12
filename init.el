@@ -1,6 +1,13 @@
 ;; (let ((benchmark-init.el (expand-file-name "elpa/benchmark-init-20141004.609/benchmark-init.el"  user-emacs-directory) ))
 ;;   (load benchmark-init.el))
 
+
+;; Added by Package.el.  This must come before configurations of
+;; installed packages.  Don't delete this line.  If you don't want it,
+;; just comment it out by adding a semicolon to the start of the line.
+;; You may delete these explanatory comments.
+(package-initialize)
+
 (set-language-environment "UTF-8")
 
 ;; No splash screen
@@ -42,6 +49,9 @@
 (require-package 'wgrep)
 (require-package 'diminish)
 (require-package 'smooth-scrolling)
+(smooth-scrolling-mode 1)
+(tooltip-mode nil)
+(setq tooltip-use-echo-area t)
 
 (require 'init-scrolling)
 
@@ -87,9 +97,11 @@
 (require 'init-bookmarks)
 (require 'init-spotlight) ;only for OSX
 (require 'init-markdown-mode)
-
+(require 'init-json)
 
 (require 'init-themes)
+
+(require 'jade)
 
 ;,---------------------------------------------------------
 ;| install packages that dont require special configuration

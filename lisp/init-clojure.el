@@ -17,7 +17,7 @@
 (add-hook 'cider-repl-mode-hook #'company-mode)
 (add-hook 'cider-mode-hook #'company-mode)
 
-(add-hook 'cider-mode-hook 'cider-turn-on-eldoc-mode)
+;(add-hook 'cider-mode-hook 'cider-turn-on-eldoc-mode)
 ;(add-hook 'cider-mode-hook 'ac-flyspell-workaround)
 
 (add-hook 'cider-repl-mode-hook 'paredit-mode)
