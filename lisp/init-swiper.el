@@ -1,5 +1,6 @@
 (require-package 'avy)
 (require-package 'swiper)
+(require-package 'counsel)
 
 (ivy-mode t)
 (setq ivy-use-virtual-buffers t)

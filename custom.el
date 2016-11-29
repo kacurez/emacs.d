@@ -8,6 +8,7 @@
  '(ansi-color-names-vector
    ["#212121" "#CC5542" "#6aaf50" "#7d7c61" "#5180b3" "#DC8CC3" "#9b55c3" "#bdbdb3"])
  '(bmkp-last-as-first-bookmark-file "~/.emacs.d/bookmarks")
+ '(cljr-warn-on-eval nil)
  '(coffee-tab-width 2)
  '(custom-safe-themes
    (quote
@@ -16,8 +17,14 @@
  '(flycheck-coffeelintrc "~/.emacs.d/coffeelint.json")
  '(package-selected-packages
    (quote
-    (jade-repl zencoding-mode whitespace-cleanup-mode wgrep web-mode volatile-highlights visual-regexp undo-tree tramp-term spotlight smooth-scrolling smex smartparens rebox2 rainbow-delimiters project-explorer php-mode paredit markdown-mode magit key-chord jsx-mode json-mode js2-refactor ido-vertical-mode ido-ubiquitous ido-at-point ibuffer-projectile highlight-symbol highlight-escape-sequences helm-git-grep guide-key gitignore-mode gitconfig-mode git-timemachine ggtags general-close fullframe flycheck flx-ido exec-path-from-shell draft-mode dired-details+ dired+ diminish dash-at-point company-tern company-quickhelp coffee-mode cider bookmark+ bm ample-zen-theme ace-window ace-jump-mode)))
- '(safe-local-variable-values (quote ((no-byte-compile t))))
+    (list-processes+ yaml-mode dockerfile-mode jade-repl zencoding-mode whitespace-cleanup-mode wgrep web-mode volatile-highlights visual-regexp undo-tree tramp-term spotlight smooth-scrolling smex smartparens rebox2 rainbow-delimiters project-explorer php-mode paredit markdown-mode magit key-chord jsx-mode json-mode js2-refactor ido-vertical-mode ido-ubiquitous ido-at-point ibuffer-projectile highlight-symbol highlight-escape-sequences helm-git-grep guide-key gitignore-mode gitconfig-mode git-timemachine ggtags general-close fullframe flycheck flx-ido exec-path-from-shell draft-mode dired-details+ dired+ diminish dash-at-point company-tern company-quickhelp coffee-mode cider bookmark+ bm ample-zen-theme ace-window ace-jump-mode)))
+ '(projectile-globally-ignored-directories
+   (quote
+    (".idea" ".ensime_cache" ".eunit" ".git" ".hg" ".fslckout" "_FOSSIL_" ".bzr" "_darcs" ".tox" ".svn" ".stack-work" "tmp")))
+ '(safe-local-variable-values
+   (quote
+    ((projectile-project-compilation-cmd . "npm run lint")
+     (no-byte-compile t))))
  '(vc-annotate-background "#3b3b3b")
  '(vc-annotate-color-map
    (quote

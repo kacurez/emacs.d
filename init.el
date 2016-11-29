@@ -1,3 +1,4 @@
+
 ;; (let ((benchmark-init.el (expand-file-name "elpa/benchmark-init-20141004.609/benchmark-init.el"  user-emacs-directory) ))
 ;;   (load benchmark-init.el))
 
@@ -95,14 +96,16 @@
 
 (require 'init-others)
 (require 'init-bookmarks)
-(require 'init-spotlight) ;only for OSX
+; (require 'init-spotlight) ;only for OSX
 (require 'init-markdown-mode)
 (require 'init-json)
 
 (require 'init-themes)
 
 (require 'jade)
-
+(require 'init-php)
+(require 'init-docker)
+(require 'init-yaml)
 ;,---------------------------------------------------------
 ;| install packages that dont require special configuration
 ;`---------------------------------------------------------
@@ -117,8 +120,8 @@
 (require-package 'smartparens)
 (require-package 'ggtags)
 (require-package 'general-close)
+(require-package 'list-processes+)
 
-(require-package 'php-mode)
 (require-package 'draft-mode)
 
 ;;----------------------------------------------------------------------------
@@ -136,8 +139,14 @@
 ;;CUSTOM.EL
 (setq custom-file (expand-file-name "custom.el" user-emacs-directory))
 
+
 (if (file-exists-p custom-file)
     (load custom-file))
+
+;; allow risky variable older eslint for kbc-ui project
+(add-to-list 'safe-local-variable-values
+             '(flycheck-javascript-eslint-executable . "/Users/tomaskacur/keboola/devel/kbc-ui/node_modules/eslint/bin/eslint.js"))
+
 
 ;;OSX stuff
 (toggle-frame-maximized)
