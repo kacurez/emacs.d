@@ -5,9 +5,9 @@
 
 ;; This is different than dired-up-directory in that it stays in the current buffer, instead of loading the parent directory in a new buffer. (I used to care about unused buffers.)
 (add-hook 'dired-mode-hook
-	  (lambda ()
-	    (define-key dired-mode-map (kbd "e")
-	      (lambda () (interactive) (find-alternate-file "..")))))
+          (lambda ()
+            (define-key dired-mode-map (kbd "e")
+              (lambda () (interactive) (find-alternate-file "..")))))
 (define-key dired-mode-map (kbd "RET")  'dired-find-alternate-file)
 
 (setq dired-listing-switches "--group-directories-first -alh")
@@ -23,8 +23,8 @@
       (message
        "Size of all marked files: %s"
        (progn
-	 (re-search-backward "\\(^[ 0-9.,]+[A-Za-z]+\\).*total$")
-	 (match-string 1))))))
+         (re-search-backward "\\(^[ 0-9.,]+[A-Za-z]+\\).*total$")
+         (match-string 1))))))
 
 ;;(define-key ctl-x-map   "d" 'diredp-dired-this-subdir)
 ;;(define-key ctl-x-4-map "d" 'dired-other-window)
@@ -45,4 +45,6 @@
 ;;   "Sort dired listings with directories first before adding marks."
 ;;   (mydired-sort))
 
+;; http://stackoverflow.com/questions/4076360/error-in-dired-sorting-on-os-x
+(setq insert-directory-program "/usr/local/bin/gls")
 (provide 'init-dired)

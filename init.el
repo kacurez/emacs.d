@@ -1,4 +1,3 @@
-
 ;; (let ((benchmark-init.el (expand-file-name "elpa/benchmark-init-20141004.609/benchmark-init.el"  user-emacs-directory) ))
 ;;   (load benchmark-init.el))
 
@@ -144,8 +143,7 @@
     (load custom-file))
 
 ;; allow risky variable older eslint for kbc-ui project
-(add-to-list 'safe-local-variable-values
-             '(flycheck-javascript-eslint-executable . "/Users/tomaskacur/keboola/devel/kbc-ui/node_modules/eslint/bin/eslint.js"))
+(add-to-list 'safe-local-variable-values '(flycheck-javascript-eslint-executable . "/Users/tomaskacur/keboola/devel/kbc-ui/node_modules/eslint/bin/eslint.js"))
 
 
 ;;OSX stuff
