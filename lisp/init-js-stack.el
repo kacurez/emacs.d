@@ -7,7 +7,7 @@
 
 (add-hook 'js-mode-hook (lambda () (tern-mode t)))
 ; (add-hook 'js2-mode-hook #'jade-interaction-mode)
-(add-hook 'jsx-mode-hook (lambda () (tern-mode t)))
+
 (add-hook 'web-mode-hook (lambda ()
                            (define-key web-mode-map (kbd "C-c C-e") 'web-mode-element-close)
                            (setq web-mode-enable-auto-closing nil)
@@ -27,14 +27,16 @@
 (add-hook 'coffee-mode-hook (lambda () (tern-mode t)))
 
 
-(add-to-list 'auto-mode-alist '("\\.jsx\\'" . jsx-mode))
-(autoload 'jsx-mode "jsx-mode" "JSX mode" t)
-(add-hook 'jsx-mode-hook 'highlight-symbol-mode )
-(add-hook 'jsx-mode-hook 'highlight-symbol-nav-mode )
+;; (add-to-list 'auto-mode-alist '("\\.jsx\\'" . jsx-mode))
+;;(add-hook 'jsx-mode-hook (lambda () (tern-mode t)))
+;; (autoload 'jsx-mode "jsx-mode" "JSX mode" t)
+;; (add-hook 'jsx-mode-hook 'highlight-symbol-mode )
+;; (add-hook 'jsx-mode-hook 'highlight-symbol-nav-mode )
 
 
 ;; use web-mode for .jsx files
 (add-to-list 'auto-mode-alist '("\\.jsx$" . web-mode))
+(add-to-list 'auto-mode-alist '("\\.js$" . web-mode))
 (setq js-indent-level 2)
 
 
