@@ -71,7 +71,6 @@
 (require 'init-multiple-cursors)
 
 ;;devel
-(require 'init-rebox2)
 
 (require 'init-company-mode)
 
