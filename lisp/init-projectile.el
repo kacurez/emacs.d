@@ -1,4 +1,8 @@
 (require-package 'projectile)
+(require-package 'perspective)
+(require-package 'persp-projectile)
+
+(persp-mode)
 
 
 (projectile-global-mode)
@@ -42,4 +46,5 @@
         (ibuffer-do-sort-by-alphabetic))))
 (global-set-key (kbd "C-x C-b") 'ibuffer)
     (autoload 'ibuffer "ibuffer" "List buffers." t)
+(define-key projectile-mode-map (kbd "s-p") 'projectile-persp-switch-project)
 (provide 'init-projectile)
