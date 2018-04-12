@@ -2,6 +2,9 @@
 (require-package 'perspective)
 (require-package 'persp-projectile)
 
+(when (not (fboundp 'make-variable-frame-local))
+  (defun make-variable-frame-local (variable) variable))
+
 (persp-mode)
 
 
