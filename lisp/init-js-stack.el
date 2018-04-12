@@ -1,7 +1,7 @@
 (require-package 'js2-refactor)
 (require-package 'web-mode)
 (require-package 'tern)
-(require-package 'jsx-mode)
+;(require-package 'jsx-mode)
 
 ;(require-package 'tern-auto-complete)
 
