@@ -19,7 +19,7 @@
                (37 . ".\\(?:\\(?:%%\\)\\|%\\)")
                (38 . ".\\(?:\\(?:&&\\)\\|&\\)")
                (42 . ".\\(?:\\(?:\\*\\*/\\)\\|\\(?:\\*[*/]\\)\\|[*/>]\\)")
-               (43 . ".\\(?:\\(?:\\+\\+\\)\\|[+>]\\)")
+               ;(43 . ".\\(?:\\(?:\\+\\+\\)\\|[+>]\\)")
                (45 . ".\\(?:\\(?:-[>-]\\|<<\\|>>\\)\\|[<>}~-]\\)")
                (46 . ".\\(?:\\(?:\\.[.<]\\)\\|[.=-]\\)")
                (47 . ".\\(?:\\(?:\\*\\*\\|//\\|==\\)\\|[*/=>]\\)")
@@ -63,6 +63,7 @@
 (if (fboundp 'scroll-bar-mode) (scroll-bar-mode -1))
 
 (add-to-list 'load-path (expand-file-name "lisp" user-emacs-directory))
+(add-to-list 'load-path "~/.emacs.d/lisp/cc-mode-5.33/")
 
 (defconst *spell-check-support-enabled* nil) ;; Enable with t if you prefer
 (defconst *is-a-mac* (eq system-type 'darwin))
@@ -82,7 +83,7 @@
 (require-package 'wgrep)
 (require-package 'diminish)
 (require-package 'smooth-scrolling)
-(smooth-scrolling-mode 1)
+(smooth-scrolling-mode nil)
 (tooltip-mode nil)
 (setq tooltip-use-echo-area t)
 
@@ -98,7 +99,6 @@
 (require 'init-dash)
 
 (require 'init-hightlight)
-
 (require 'init-volatile-highlights)
 (require 'init-undo-tree)
 (require 'init-multiple-cursors)
@@ -106,30 +106,28 @@
 ;;devel
 
 (require 'init-company-mode)
-
 (require 'init-paredit)
-(require 'init-rainbow-delimiters)
-(require 'init-flycheck)     ;; check syntax errors
 
+(require 'init-rainbow-delimiters)
+(require 'init-js-stack)
+(require 'init-flycheck)     ;; check syntax errors
 (require 'init-html)
 (require 'init-coffee-mode)
-(require 'init-js-stack)
 (require 'init-whitespace-cleanup-mode)
 
 (require 'init-projectile)
+
 (require 'init-helm);;helm and projectile-helm and helm-git-grep
-
 (require 'init-git)
-
 (require 'init-clojure)
-
 (require 'init-editing)
-
 (require 'init-others)
 (require 'init-bookmarks)
 ; (require 'init-spotlight) ;only for OSX
+
 (require 'init-markdown-mode)
 (require 'init-json)
+(require 'init-elm)
 
 (require 'init-themes)
 
@@ -137,6 +135,7 @@
 (require 'init-php)
 (require 'init-docker)
 (require 'init-yaml)
+
 ;,---------------------------------------------------------
 ;| install packages that dont require special configuration
 ;`---------------------------------------------------------
@@ -152,7 +151,7 @@
 (require-package 'ggtags)
 (require-package 'general-close)
 (require-package 'list-processes+)
-
+(require-package 'kubernetes)
 (require-package 'draft-mode)
 
 ;;----------------------------------------------------------------------------

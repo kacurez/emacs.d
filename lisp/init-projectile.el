@@ -5,11 +5,11 @@
 (when (not (fboundp 'make-variable-frame-local))
   (defun make-variable-frame-local (variable) variable))
 
-(persp-mode)
+;; (persp-mode)
 
 
 (projectile-global-mode)
-(setq projectile-indexing-method 'git)
+;(setq projectile-indexing-method 'turbo-alien)
 (setq projectile-completion-system 'ido)
 (setq projectile-remember-window-configs t)
 (global-set-key (kbd "C-c h") 'projectile-find-file)
@@ -36,10 +36,14 @@
                                       (expand-file-name file (projectile-project-root)))
                                   files))))
     (multi-occur buffers regexp nlines)))
+
+
 (setq projectile-completion-system 'ivy)
 
 (require-package 'project-explorer)
 (global-set-key (kbd "C-c o") 'project-explorer-open)
+(define-key projectile-mode-map (kbd "C-c p") 'projectile-command-map)
+
 
 (require-package 'ibuffer-projectile)
 (add-hook 'ibuffer-hook

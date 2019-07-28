@@ -1,12 +1,36 @@
 (require-package 'js2-refactor)
 (require-package 'web-mode)
-(require-package 'tern)
-;(require-package 'jsx-mode)
+;(require-package 'tern)
+(require-package 'prettier-js)
+;; (require-package 'jsx-mode)
+(require-package 'tide)
+
+
+(defun setup-tide-mode ()
+  (interactive)
+  (tide-setup)
+  (flycheck-mode +1)
+  (setq flycheck-check-syntax-automatically '(save mode-enabled))
+  (eldoc-mode +1)
+  (tide-hl-identifier-mode +1)
+  (company-mode +1))
+
+;; aligns annotation to the right hand side
+(setq company-tooltip-align-annotations t)
+
+
+
 
 ;(require-package 'tern-auto-complete)
 
-(add-hook 'js-mode-hook (lambda () (tern-mode t)))
-; (add-hook 'js2-mode-hook #'jade-interaction-mode)
+;(add-hook 'js-mode-hook (lambda () (tern-mode t)))
+;;; (add-hook 'js2-mode-hook #'jade-interaction-mode)
+
+(defun enable-minor-mode (my-pair)
+  "Enable minor mode if filename match the regexp.  MY-PAIR is a cons cell (regexp . minor-mode)."
+  (if (buffer-file-name)
+      (if (string-match (car my-pair) buffer-file-name)
+      (funcall (cdr my-pair)))))
 
 (add-hook 'web-mode-hook (lambda ()
                            (define-key web-mode-map (kbd "C-c C-e") 'web-mode-element-close)
@@ -17,14 +41,22 @@
                            (setq web-mode-enable-auto-quoting nil)
                            (setq web-mode-markup-indent-offset 2)
                            (setq web-mode-attr-indent-offset 2)
-                           (tern-mode t))
+                           (setup-tide-mode)
+                           ;; (enable-minor-mode '("\\.jsx?\\'" . prettier-js-mode))
+
+                           ;; (tern-mode t)
+                           (smartparens-mode))
           ;; (add-to-list 'web-mode-indentation-params '("lineup-args" . nil))
           ;; (add-to-list 'web-mode-indentation-params '("lineup-calls" . nil))
           ;; (add-to-list 'web-mode-indentation-params '("lineup-concats" . nil))
           ;; (add-to-list 'web-mode-indentation-params '("lineup-ternary" . nil))
           )
 
-(add-hook 'coffee-mode-hook (lambda () (tern-mode t)))
+(setq prettier-js-args '(
+  "--single-quote" "true"
+  ))
+
+;(add-hook 'coffee-mode-hook (lambda () (tern-mode t)))
 
 
 ;; (add-to-list 'auto-mode-alist '("\\.jsx\\'" . jsx-mode))

@@ -33,4 +33,13 @@
 
 (setenv "LEIN_JVM_OPTS" "-Xmx256m -Xms64m")
 
+(defun cljfmt ()
+  (when (or (eq major-mode 'clojure-mode)
+            (eq major-mode 'clojurescript-mode))
+    (shell-command-to-string (format "/Users/tomaskacur/devel/clojure/cljfmt-graalvm/target/cljfmt %s" buffer-file-name))
+    (revert-buffer :ignore-auto :noconfirm)))
+
+(add-hook 'after-save-hook #'cljfmt)
+; (remove-hook 'after-save-hook #'cljfmt)
+
 (provide 'init-clojure)

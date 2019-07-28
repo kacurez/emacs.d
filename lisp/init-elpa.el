@@ -4,7 +4,7 @@
 (let ((package-el-site-lisp-dir
        (expand-file-name "site-lisp/package" user-emacs-directory)))
   (when (and (file-directory-p package-el-site-lisp-dir)
-	     (> emacs-major-version 23))
+             (> emacs-major-version 23))
     (message "Removing local package.el from load-path to avoid shadowing bundled version")
     (setq load-path (remove package-el-site-lisp-dir load-path))))
 
@@ -50,10 +50,10 @@ re-downloaded in order to locate PACKAGE."
   (if (package-installed-p package min-version)
       t
     (if (or (assoc package package-archive-contents) no-refresh)
-	(package-install package)
+        (package-install package)
       (progn
-	(package-refresh-contents)
-	(require-package package min-version t)))))
+        (package-refresh-contents)
+        (require-package package min-version t)))))
 
 
 (defun maybe-require-package (package &optional min-version no-refresh)
@@ -84,8 +84,8 @@ locate PACKAGE."
 (defun tomasko/set-tabulated-list-column-width (col-name width)
   "Set any column with name COL-NAME to the given WIDTH."
   (cl-loop for column across tabulated-list-format
-	   when (string= col-name (car column))
-	   do (setf (elt column 1) width)))
+           when (string= col-name (car column))
+           do (setf (elt column 1) width)))
 
 (defun tomasko/maybe-widen-package-menu-columns ()
   "Widen some columns of the package menu table to avoid truncation."

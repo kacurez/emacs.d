@@ -51,5 +51,6 @@
 
 (setq scroll-step 2) ;; keyboard scroll one line at a time
 
+(setq auto-window-vscroll nil)
 
 (provide 'init-scrolling)
