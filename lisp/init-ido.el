@@ -1,7 +1,7 @@
 ;;IDO  SETUP
 (require-package 'flx-ido)
 (require-package 'ido-at-point)
-(require-package 'ido-ubiquitous)
+(require-package 'ido-completing-read+)
 (ido-mode 1)
 (ido-everywhere 1)
 (flx-ido-mode 1)

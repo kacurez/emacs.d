@@ -74,7 +74,7 @@
 (require 'init-utils)
 ;;(require 'init-site-lisp) ;; Must come before elpa, as it may provide package.el
 (require 'init-elpa)      ;; Machinery for installing required packages
-;;(require 'init-exec-path) ;; Set up $PATH
+(require 'init-exec-path) ;; Set up $PATH
 
 ;;----------------------------------------------------------------------------
 ;; Load configs for specific features and modes
@@ -145,8 +145,7 @@
 (require-package 'yasnippet)    ;; code snippets and templates
 (require-package 'smartparens)
 (require-package 'ggtags)
-(require-package 'general-close)
-(require-package 'list-processes+)
+;;(require-package 'list-processes+)
 (require-package 'kubernetes)
 (require-package 'draft-mode)
 
@@ -177,4 +176,4 @@
 (toggle-frame-maximized)
 ;;(put 'dired-find-alternate-file 'disabled nil)
 ;(load-theme 'ample-zen t)
-(setq exec-path (append exec-path '("/usr/local/bin")))
+;;(setq exec-path (append exec-path '("/usr/local/bin")))
