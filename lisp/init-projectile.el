@@ -40,8 +40,6 @@
 
 (setq projectile-completion-system 'ivy)
 
-(require-package 'project-explorer)
-(global-set-key (kbd "C-c o") 'project-explorer-open)
 (define-key projectile-mode-map (kbd "C-c p") 'projectile-command-map)
 
 

@@ -107,7 +107,6 @@
 (require 'init-company-mode)
 (require 'init-paredit)
 
-(require 'init-rainbow-delimiters)
 (require 'init-js-stack)
 (require 'init-flycheck)     ;; check syntax errors
 (require 'init-html)
