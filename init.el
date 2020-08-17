@@ -149,6 +149,10 @@
 (require-package 'kubernetes)
 (require-package 'draft-mode)
 
+(require-package 'smooth-scrolling)
+(smooth-scrolling-mode 1)
+(setq smooth-scroll-margin 3)
+
 ;;----------------------------------------------------------------------------
 ;; Allow access from emacsclient
 ;;----------------------------------------------------------------------------
@@ -177,3 +181,4 @@
 ;;(put 'dired-find-alternate-file 'disabled nil)
 ;(load-theme 'ample-zen t)
 ;;(setq exec-path (append exec-path '("/usr/local/bin")))
+(pixel-scroll-mode)
