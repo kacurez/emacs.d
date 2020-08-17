@@ -1,8 +1,6 @@
 (require-package 'js2-refactor)
 (require-package 'web-mode)
-;(require-package 'tern)
 (require-package 'prettier-js)
-;; (require-package 'jsx-mode)
 (require-package 'tide)
 
 
@@ -18,19 +16,11 @@
 ;; aligns annotation to the right hand side
 (setq company-tooltip-align-annotations t)
 
-
-
-
-;(require-package 'tern-auto-complete)
-
-;(add-hook 'js-mode-hook (lambda () (tern-mode t)))
-;;; (add-hook 'js2-mode-hook #'jade-interaction-mode)
-
 (defun enable-minor-mode (my-pair)
   "Enable minor mode if filename match the regexp.  MY-PAIR is a cons cell (regexp . minor-mode)."
   (if (buffer-file-name)
       (if (string-match (car my-pair) buffer-file-name)
-      (funcall (cdr my-pair)))))
+          (funcall (cdr my-pair)))))
 
 (add-hook 'web-mode-hook (lambda ()
                            (define-key web-mode-map (kbd "C-c C-e") 'web-mode-element-close)
@@ -53,18 +43,8 @@
           )
 
 (setq prettier-js-args '(
-  "--single-quote" "true"
-  ))
-
-;(add-hook 'coffee-mode-hook (lambda () (tern-mode t)))
-
-
-;; (add-to-list 'auto-mode-alist '("\\.jsx\\'" . jsx-mode))
-;;(add-hook 'jsx-mode-hook (lambda () (tern-mode t)))
-;; (autoload 'jsx-mode "jsx-mode" "JSX mode" t)
-;; (add-hook 'jsx-mode-hook 'highlight-symbol-mode )
-;; (add-hook 'jsx-mode-hook 'highlight-symbol-nav-mode )
-
+                         "--single-quote" "true"
+                         ))
 
 ;; use web-mode for .jsx files
 (add-to-list 'auto-mode-alist '("\\.jsx$" . web-mode))
@@ -72,15 +52,12 @@
 (setq js-indent-level 2)
 
 
-
-;Highlight current HTML element (see web-mode-current-element-highlight-face)
+                                        ;Highlight current HTML element (see web-mode-current-element-highlight-face)
 (setq web-mode-enable-current-element-highlight nil)
 
-;You can also highlight the current column with
+                                        ;You can also highlight the current column with
 (setq web-mode-enable-current-column-highlight t)
 
-
 (setenv "PATH" (concat "/usr/local/bin/node:" (getenv "PATH")))
-
 
 (provide 'init-js-stack)
