@@ -4,6 +4,7 @@
 ;(require-package 'ac-cider)
 (setq nrepl-hide-special-buffers t)
 (require-package 'clj-refactor)
+(require-package 'flycheck-clj-kondo)
 
 (defun clojure-mode-refactor-hook ()
     (clj-refactor-mode 1)
@@ -36,10 +37,14 @@
 (defun cljfmt ()
   (when (or (eq major-mode 'clojure-mode)
             (eq major-mode 'clojurescript-mode))
-    (shell-command-to-string (format "/Users/tomaskacur/devel/clojure/cljfmt-graalvm/target/cljfmt %s" buffer-file-name))
+    (shell-command-to-string (format "/Users/tomaskacur/devel/clojure/cljfmt/cljfmt/target/cljfmt fix %s" buffer-file-name))
     (revert-buffer :ignore-auto :noconfirm)))
 
 (add-hook 'after-save-hook #'cljfmt)
-; (remove-hook 'after-save-hook #'cljfmt)
+;;; (remove-hook 'after-save-hook #'cljfmt)
+
+(require 'flycheck-clj-kondo)
+(dolist (checker '(clj-kondo-clj clj-kondo-cljs clj-kondo-cljc clj-kondo-edn))
+  (setq flycheck-checkers (cons checker (delq checker flycheck-checkers))))
 
 (provide 'init-clojure)
