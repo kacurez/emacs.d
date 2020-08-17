@@ -1,6 +1,4 @@
 (require 'dired)
-(require-package 'dired-details+)
-(require-package 'dired+)
 (require 'dired+)
 
 ;; This is different than dired-up-directory in that it stays in the current buffer, instead of loading the parent directory in a new buffer. (I used to care about unused buffers.)
