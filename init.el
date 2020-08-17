@@ -81,8 +81,7 @@
 ;;----------------------------------------------------------------------------
 (require-package 'wgrep)
 (require-package 'diminish)
-(require-package 'smooth-scrolling)
-(smooth-scrolling-mode nil)
+
 (tooltip-mode nil)
 (setq tooltip-use-echo-area t)
 
@@ -98,7 +97,6 @@
 (require 'init-dash)
 
 (require 'init-hightlight)
-(require 'init-volatile-highlights)
 (require 'init-undo-tree)
 (require 'init-multiple-cursors)
 

@@ -39,9 +39,6 @@ Including indent-buffer, which should not be called automatically on save."
 
 (defalias 'yes-or-no-p 'y-or-n-p)
 
-;;scrolling setup
-(setq smooth-scroll-margin 8)
-
 (defun ffap-read-file-or-url (prompt guess)
   "Read file or URL from minibuffer, with PROMPT and initial GUESS."
   (or guess (setq guess default-directory))
