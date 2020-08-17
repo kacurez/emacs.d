@@ -1,17 +1,6 @@
 (require-package 'js2-refactor)
 (require-package 'web-mode)
 (require-package 'prettier-js)
-(require-package 'tide)
-
-
-(defun setup-tide-mode ()
-  (interactive)
-  (tide-setup)
-  (flycheck-mode +1)
-  (setq flycheck-check-syntax-automatically '(save mode-enabled))
-  (eldoc-mode +1)
-  (tide-hl-identifier-mode +1)
-  (company-mode +1))
 
 ;; aligns annotation to the right hand side
 (setq company-tooltip-align-annotations t)
@@ -31,7 +20,6 @@
                            (setq web-mode-enable-auto-quoting nil)
                            (setq web-mode-markup-indent-offset 2)
                            (setq web-mode-attr-indent-offset 2)
-                           (setup-tide-mode)
                            ;; (enable-minor-mode '("\\.jsx?\\'" . prettier-js-mode))
 
                            ;; (tern-mode t)
