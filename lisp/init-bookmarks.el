@@ -1,4 +1,3 @@
-(require-package 'bookmark+)
 (require-package 'bm)
 
 ;; M$ Visual Studio key setup.
