@@ -9,7 +9,7 @@
 (key-chord-define-global "jk"  'avy-goto-word-1)
 (key-chord-define-global "jw"  'avy-goto-word-0)
 
-(require 'cl)
+;;(require 'cl)
 (defvar avoid-window-regexp "cider-repl")
 (defun my-other-window ()
   "Similar to 'other-window, only try to avoid windows whose buffers match avoid-window-regexp"

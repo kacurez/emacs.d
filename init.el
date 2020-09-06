@@ -6,7 +6,7 @@
 ;; installed packages.  Don't delete this line.  If you don't want it,
 ;; just comment it out by adding a semicolon to the start of the line.
 ;; You may delete these explanatory comments.
-(package-initialize)
+;;(package-initialize)
 
 (set-language-environment "UTF-8")
 (set-default-coding-systems 'utf-8)
@@ -93,6 +93,7 @@
 (require 'init-ace-jump) ;and ace-window
 (require 'init-guide-key)
 (require 'init-hippie-expand)
+(setq default-directory "~")
 (require 'init-dired)
 (require 'init-dash)
 
@@ -102,6 +103,7 @@
 
 ;;devel
 
+;; (require 'init-lsp)
 (require 'init-company-mode)
 (require 'init-paredit)
 
@@ -136,18 +138,20 @@
 ;| install packages that dont require special configuration
 ;`---------------------------------------------------------
 
-(require-package 'tramp-term)
+;;(require-package 'tramp-term)
 ;;(require-package 'restclient) melpa problem installing?
 
 (require-package 'visual-regexp)
 (require-package 'highlight-escape-sequences)
 
-(require-package 'yasnippet)    ;; code snippets and templates
+;;(require-package 'yasnippet)    ;; code snippets and templates
 (require-package 'smartparens)
 (require-package 'ggtags)
 ;;(require-package 'list-processes+)
 (require-package 'kubernetes)
 (require-package 'draft-mode)
+(require-package 'nginx-mode)
+
 
 (require-package 'smooth-scrolling)
 (smooth-scrolling-mode 1)
